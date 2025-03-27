@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma of Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#FFFAF0]">
+
+    <!-- Navigation Bar -->
+    <div class="flex justify-between items-center p-4 w-full bg-[#ECEBCD] shadow-md relative">
+
+        <!-- Logo -->
+        <div class="pl-4">
+            <img src="Pho/Img1.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+        </div>
+
+        <!-- Navigation Links (Hidden on Mobile) -->
+        <div class="hidden md:flex flex-col items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">Aroma of Perfume</h1>
+            <nav class="hidden md:flex space-x-6 mt-2">
+                <a href="page1.html" class="hover:text-gray-600">Home</a>
+                <a href="page2.html" class="hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Icons & Mobile Menu -->
+        <div class="flex space-x-6 items-center">
+            <a href="page1.html"><i class="fa-solid fa-house text-2xl"></i></a>
+            <a href="Cast.html"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
+            <a href="Profi.html"><i class="fa-solid fa-user text-2xl"></i></a>
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#ECEBCD] shadow-md hidden">
+            <nav class="flex flex-col text-center space-y-2 p-4">
+                <a href="page1.html" class="block hover:text-gray-600">Home</a>
+                <a href="page2.html" class="block hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="block hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="block hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="relative w-full">
+        <img src="/Project/Team7/Pho/Img12.jpg" alt="Gentlemen Only Perfume" class="w-full h-[500px] object-cover">
+        
+        <div class="absolute top-[66%] left-10 md:left-32 lg:left-[220px] -translate-y-1/2">
+            <button class="px-6 py-3 bg-[#F5E3D7] text-black font-semibold rounded-full shadow-xl hover:bg-gray-200">
+                <a href="womenCatalog.html">Product Catalog</a>
+            </button>
+        </div>
+    </section>
+    
+
+    <!-- Collection Title -->
+    <div class="flex justify-center items-center text-3xl font-bold w-full shadow-lg h-20 bg-[#ECEBCD]">
+        <h2>Lady's Collections</h2>
+    </div>
+
+    <!-- Recommended Section -->
+    <section class="py-6 bg-[#FFFAF0]">
+        <div class="text-center mb-4">
+            <button class="px-6 py-2 bg-white shadow-lg rounded-full">Recommended</button>
+        </div>
+
+        <div class="w-full flex flex-row justify-center overflow-x-auto px-4">
+            <div class="flex space-x-10 w-max">
+                <img src="/Project/Team7/Pho/w1.jpg" alt="Perfume 1"
+                    class="w-56 h-56 rounded-lg shadow-md snap-center">
+                <img src="/Project/Team7/Pho/w2.jpg" alt="Perfume 2"
+                    class="w-56 h-56 rounded-lg shadow-md snap-center">
+                <img src="/Project/Team7/Pho/w3.jpg" alt="Perfume 3"
+                    class="w-56 h-56 rounded-lg shadow-md snap-center">
+                <img src="/Project/Team7/Pho/w4.jpg" alt="Perfume 4"
+                    class="w-56 h-56 rounded-lg shadow-md snap-center">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-[#ECEBCD] mt-6">
+        <p>2025 Perfume. All rights reserved</p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

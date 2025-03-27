@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aroma of Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#FFFAF0]">
+    <!-- Navigation Bar -->
+    <div class="flex justify-between items-center p-4 w-full bg-[#ECEBCD] shadow-md relative">
+
+        <!-- Logo -->
+        <div class="pl-4">
+            <img src="Pho/Img1.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+        </div>
+
+        <!-- Navigation Links (Hidden on Mobile) -->
+        <div class="hidden md:flex flex-col items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">Aroma of Perfume</h1>
+            <nav class="hidden md:flex space-x-6 mt-2">
+                <a href="page1.html" class="hover:text-gray-600">Home</a>
+                <a href="page2.html" class="hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Icons & Mobile Menu -->
+        <div class="flex space-x-6 items-center">
+            <a href="page1.html"><i class="fa-solid fa-house text-2xl"></i></a>
+            <a href="Cast.html"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
+            <a href="Profi.html"><i class="fa-solid fa-user text-2xl"></i></a>
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#ECEBCD] shadow-md hidden">
+            <nav class="flex flex-col text-center space-y-2 p-4">
+                <a href="page1.html" class="block hover:text-gray-600">Home</a>
+                <a href="page2.html" class="block hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="block hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="block hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- About Us Content -->
+    <div class="w-full h-screen sm:h-screen md:h-[670px] flex flex-col space-y-20">
+        <div class="max-w-3xl mx-auto mt-12 p-8 bg-white shadow-lg rounded-lg text-center">
+            <h2 class="text-4xl font-bold text-[#B08EAD]">About Aroma of Perfume</h2>
+            <p class="mt-4 text-gray-600 text-lg">
+                Welcome to Aroma of Perfume, your ultimate destination for luxurious and captivating fragrances.
+                We believe that every scent tells a story, and we are here to help you find the perfect one to match
+                yours.
+            </p>
+            <p class="mt-4 text-gray-600 text-lg">
+                Founded with a passion for excellence, our collection features carefully crafted perfumes made from
+                the finest ingredients sourced from around the world. Whether you are looking for an everyday signature
+                scent
+                or a special fragrance for a memorable occasion, we have something just for you.
+            </p>
+        </div>
+
+        <!-- Member Section -->
+        <div class="flex justify-center items-center">
+            <h1 class="bg-[#ECEBCD] rounded-full px-12 py-4 shadow-lg text-lg md:text-xl">MEMBER</h1>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center mt-8">
+            <!-- member-1 -->
+            <a href="/HTML/Slot Machine/Slot.html" class="flex flex-col justify-center items-center">
+                <img src="/Project/Team7/Pho/PhetSO.jpg" alt="Phonethavixay"
+                    class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full">
+                <h2 class="text-lg sm:text-xl mt-2">Phonethavixay</h2>
+            </a>
+
+            <!-- member-2 -->
+            <div class="flex flex-col justify-center items-center">
+                <img src="/Project/Team7/Pho/w1.jpg" alt="Nina"
+                    class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full">
+                <h2 class="text-lg sm:text-xl mt-2">Nina</h2>
+            </div>
+
+            <!-- member-3 -->
+            <div class="flex flex-col justify-center items-center">
+                <img src="/Project/Team7/Pho/w1.jpg" alt="Leng Lor"
+                    class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full">
+                <h2 class="text-lg sm:text-xl mt-2">Leng Lor</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-36 bg-[#ECEBCD]">
+        <p>2025 Aroma of Perfume. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

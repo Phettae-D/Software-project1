@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Info - Aroma of Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .ProductImg {
+            width: 350px;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 5px #ECEBCD;
+        }
+
+        .Price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #B08EAD;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFAF0]">
+    <!-- Navigation Bar -->
+<div class="flex justify-between items-center p-4 w-full bg-[#ECEBCD] shadow-md relative">
+
+    <!-- Logo -->
+    <div class="pl-4">
+        <img src="Pho/Img1.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+    </div>
+
+    <!-- Navigation Links (Hidden on Mobile) -->
+    <div class="hidden md:flex flex-col items-center">
+        <h1 class="text-2xl md:text-3xl font-bold text-center">Aroma of Perfume</h1>
+        <nav class="hidden md:flex space-x-6 mt-2">
+            <a href="page1.html" class="hover:text-gray-600">Home</a>
+            <a href="page2.html" class="hover:text-gray-600">Collections</a>
+            <a href="page3.html" class="hover:text-gray-600">About Us</a>
+            <a href="page4.html" class="hover:text-gray-600">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Icons & Mobile Menu -->
+    <div class="flex space-x-6 items-center">
+        <a href="page1.html"><i class="fa-solid fa-house text-2xl"></i></a>
+        <a href="Cast.html"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
+        <a href="Profi.html"><i class="fa-solid fa-user text-2xl"></i></a>
+        <!-- Hamburger Menu for Mobile -->
+        <button id="menu-btn" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#ECEBCD] shadow-md hidden">
+        <nav class="flex flex-col text-center space-y-2 p-4">
+            <a href="page1.html" class="block hover:text-gray-600">Home</a>
+            <a href="page2.html" class="block hover:text-gray-600">Collections</a>
+            <a href="page3.html" class="block hover:text-gray-600">About Us</a>
+            <a href="page4.html" class="block hover:text-gray-600">Contact</a>
+        </nav>
+    </div>
+</div>
+
+    <!-- Product Info Section -->
+    <div class="flex flex-col md:flex-row justify-center items-center mt-12 space-x-0 md:space-x-12 p-6">
+        <!-- Product Image -->
+        <div>
+            <img src="/Project/Team7/Pho/w1.jpg" alt="Tom Ford" class="ProductImg">
+        </div>
+
+        <!-- Product Details -->
+        <div class="max-w-lg bg-white p-8 shadow-lg rounded-lg">
+            <h2 class="text-4xl font-bold">Avon Velvet</h2>
+            <p class="text-lg text-gray-600 mt-2">IA cozy, silky fragrance that evokes warmth and allure; perfect for evenings out.</p>
+
+            <p class="Price">$65</p>
+
+            <div class="mt-6">
+                <button onclick="addToCart()"
+                    class="bg-[#B08EAD] text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:bg-[#9A7E99] transition">
+                    <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+        <footer class="text-center h-auto py-4 mt-36 bg-[#ECEBCD]">
+            <p>2025 Perfume. All rights reserved</p>
+        </footer>
+    <script>
+        function addToCart() {
+
+            let productName = document.querySelector("h2").innerText;
+            let productPrice = document.querySelector(".Price").innerText.replace('$', '');
+            let productImage = document.querySelector(".ProductImg").src;
+
+            let product = {
+                name: productName,
+                price: parseFloat(productPrice),
+                image: productImage
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push(product);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert(productName + " Add to cast.");
+        }
+
+        document.querySelector("button").addEventListener("click", addToCart);
+    </script>
+</body>
+
+</html>

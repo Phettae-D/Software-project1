@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Aroma of Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-[#FFFAF0]">
+    <!-- Navigation Bar -->
+    <div class="flex justify-between items-center p-4 w-full bg-[#ECEBCD] shadow-md relative">
+
+        <!-- Logo -->
+        <div class="pl-4">
+            <img src="Pho/Img1.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+        </div>
+
+        <!-- Navigation Links (Hidden on Mobile) -->
+        <div class="hidden md:flex flex-col items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">Aroma of Perfume</h1>
+            <nav class="hidden md:flex space-x-6 mt-2">
+                <a href="page1.html" class="hover:text-gray-600">Home</a>
+                <a href="page2.html" class="hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Icons & Mobile Menu -->
+        <div class="flex space-x-6 items-center">
+            <a href="page1.html"><i class="fa-solid fa-house text-2xl"></i></a>
+            <a href="Cast.html"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
+            <a href="Profi.html"><i class="fa-solid fa-user text-2xl"></i></a>
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#ECEBCD] shadow-md hidden">
+            <nav class="flex flex-col text-center space-y-2 p-4">
+                <a href="page1.html" class="block hover:text-gray-600">Home</a>
+                <a href="page2.html" class="block hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="block hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="block hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="flex flex-col items-center mt-12 p-6">
+        <h2 class="text-4xl font-bold">Contact Us</h2>
+        <p class="text-lg text-gray-600 mt-2 text-center">Have any questions? We'd love to hear from you!</p>
+        <div class="flex flex-row justify-between items-center space-x-24">
+            <form class="bg-white p-8 shadow-lg rounded-lg mt-6 w-96">
+                <label class="block font-semibold">Name</label>
+                <input type="text" class="w-full p-2 border border-gray-300 rounded mt-2" required>
+                
+                <label class="block font-semibold mt-4">Email</label>
+                <input type="email" class="w-full p-2 border border-gray-300 rounded mt-2" required>
+                
+                <label class="block font-semibold mt-4">Message</label>
+                <textarea class="w-full p-2 border border-gray-300 rounded mt-2" rows="4" required></textarea>
+                
+                <button onclick="sendM()" type="submit" class="bg-[#B08EAD] text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:bg-[#9A7E99] transition w-full mt-4">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> Send Message
+                </button>
+            </form>
+
+            <div class="flex flex-col justify-center items-center space-y-4">
+
+                <!--FaceBook-->
+                <a href="https://www.facebook.com/profile.php?id=61562759820795" class="bg-white w-[450px] h-[120px] shadow-xl rounded-2xl flex flex-row justify-start items-center space-x-6 cursor-pointer">
+                    <img src="Pho/F.png" alt="logo" class="w-20 h-20 ml-2 rounded-full">
+                    <h1 class="text-4xl font-bold">Aroma of Perfume </h1>
+                </a>
+
+                <!--Instargam-->
+                <a href="https://www.instagram.com/aroma___perfume/" class="bg-white w-[450px] h-[120px] shadow-xl rounded-2xl flex flex-row justify-start items-center space-x-6 cursor-pointer">
+                    <img src="Pho/In.png" alt="logo" class="w-20 h-20 ml-2 rounded-full">
+                    <h1 class="text-4xl font-bold">Aroma_Perfume </h1>
+                </a>
+
+                <!--Email-->
+                <div class="bg-white w-[450px] h-[120px] shadow-xl rounded-2xl flex flex-row justify-start items-center space-x-6">
+                    <img src="Pho/E.png" alt="logo" class="w-20 h-20 ml-2 rounded-full">
+                    <h1 class="text-4xl font-bold">aroma@gamil.com</h1>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-12 bg-[#ECEBCD]">
+        <p>2025 Perfume. All rights reserved</p>
+    </footer>
+
+    <script>
+        function sendM() {
+            alert("Send messages sasses full!.")
+        }
+    </script>
+</body>
+</html>

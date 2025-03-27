@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma of Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#FFFAF0]">
+
+    <!-- Navigation Bar -->
+    <div class="flex justify-between items-center p-4 w-full bg-[#ECEBCD] shadow-md relative">
+
+        <!-- Logo -->
+        <div class="pl-4">
+            <img src="Pho/Img1.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+        </div>
+
+        <!-- Navigation Links (Hidden on Mobile) -->
+        <div class="hidden md:flex flex-col items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">Aroma of Perfume</h1>
+            <nav class="hidden md:flex space-x-6 mt-2">
+                <a href="page1.html" class="hover:text-gray-600">Home</a>
+                <a href="page2.html" class="hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Icons & Mobile Menu -->
+        <div class="flex space-x-6 items-center">
+            <a href="page1.html"><i class="fa-solid fa-house text-2xl"></i></a>
+            <a href="Cast.html"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
+            <a href="Profi.html"><i class="fa-solid fa-user text-2xl"></i></a>
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#ECEBCD] shadow-md hidden">
+            <nav class="flex flex-col text-center space-y-2 p-4">
+                <a href="page1.html" class="block hover:text-gray-600">Home</a>
+                <a href="page2.html" class="block hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="block hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="block hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="text-center text-3xl w-full shadow-lg py-8 bg-[#FFFAF0]">
+        <h2 class="font-semibold">Collections of Perfume</h2>
+        <p class="text-lg text-gray-700">For adults who love exquisite scents...</p>
+    </div>
+
+    <!-- Perfume Collections -->
+    <div class="w-full flex flex-col space-y-6 mt-6 px-4 md:px-12">
+        
+        <!-- Women's Collection -->
+        <div class="relative w-full h-56 flex items-center justify-center bg-cover bg-center shadow-lg"
+            style="background-image: url(/Project/Team7/Pho/ww.jpg);">
+            <div class="bg-opacity-75 p-6 rounded-lg text-center mt-6">
+                <h3 class="text-2xl md:text-3xl text-black">Women's Collections</h3>
+                <button class="mt-3 bg-white rounded-full px-6 py-2 shadow-md hover:bg-gray-200">
+                    <a href="womenC.html">More</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Men's Collection -->
+        <div class="relative w-full h-56 flex items-center justify-center bg-cover bg-center shadow-lg"
+            style="background-image: url(/Project/Team7/Pho/mw.jpg);">
+            <div class="bg-opacity-75 p-6 rounded-lg text-center">
+                <h3 class="text-2xl md:text-3xl text-white">Men's Collections</h3>
+                <button class="mt-3 bg-white rounded-full px-6 py-2 shadow-md hover:bg-gray-200">
+                    <a href="menC.html">More</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- All-Gender Collection -->
+        <div class="relative w-full h-56 flex items-center justify-center bg-cover bg-center shadow-lg"
+            style="background-image: url(/Project/Team7/Pho/aw.jpg);">
+            <div class="bg-opacity-75 p-6 rounded-lg text-center">
+                <h3 class="text-2xl md:text-3xl">All Gender's Collections</h3>
+                <button class="mt-3 bg-white rounded-full px-6 py-2 shadow-md hover:bg-gray-200">
+                    <a href="allC.html">More</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-[#ECEBCD] mt-6">
+        <p>2025 Perfume. All rights reserved</p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

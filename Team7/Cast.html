@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Aroma of Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" />
+    <script src="/Project/Team7/script.js"></script>
+    <style>
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #ccc;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFAF0]">
+    <!-- Navigation Bar -->
+    <div class="flex justify-between items-center p-4 w-full bg-[#ECEBCD] shadow-md relative">
+        <div class="pl-4">
+            <img src="Pho/Img1.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+        </div>
+
+        <div class="hidden md:flex flex-col items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">Aroma of Perfume</h1>
+            <nav class="hidden md:flex space-x-6 mt-2">
+                <a href="page1.html" class="hover:text-gray-600">Home</a>
+                <a href="page2.html" class="hover:text-gray-600">Collections</a>
+                <a href="page3.html" class="hover:text-gray-600">About Us</a>
+                <a href="page4.html" class="hover:text-gray-600">Contact</a>
+            </nav>
+        </div>
+
+        <div class="flex space-x-6 items-center">
+            <a href="page1.html"><i class="fa-solid fa-house text-2xl"></i></a>
+            <a href="Cast.html"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
+            <a href="Profi.html"><i class="fa-solid fa-user text-2xl"></i></a>
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#ECEBCD] p-4">
+        <nav class="flex flex-col text-center space-y-2">
+            <a href="page1.html" class="block hover:text-gray-600">Home</a>
+            <a href="page2.html" class="block hover:text-gray-600">Collections</a>
+            <a href="page3.html" class="block hover:text-gray-600">About Us</a>
+            <a href="page4.html" class="block hover:text-gray-600">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Shopping Cart Section -->
+        <div class="w-full md:w-3/5 lg:w-2/5 mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+            <h2 class="text-3xl font-bold mb-6 text-center">Your Shopping Cart</h2>
+            <div id="cart-items" class="overflow-y-auto w-full min-h-72 max-h-96"></div>
+            <div class="flex justify-between items-center mt-6">
+                <h3 class="text-2xl font-bold">Total:</h3>
+                <p id="total-price" class="text-2xl font-semibold text-black"></p>
+            </div>
+            <div class="mt-6 text-center">
+                <button onclick="buy()" class="bg-[#B08EAD] text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:bg-[#9A7E99] transition">
+                    <i class="fa-solid fa-credit-card mr-2"></i> Proceed to Checkout
+                </button>
+            </div>
+        </div>
+
+    <!-- Footer -->
+    <footer class="text-center h-auto py-4 mt-12 bg-[#ECEBCD]">
+        <p>2025 Perfume. All rights reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartContainer = document.getElementById("cart-items");
+            cartContainer.innerHTML = "";
+
+            cart.forEach((item, index) => {
+                let cartItem = `
+                <div class="cart-item grid grid-cols-5 space-x-12 md:grid-row-4 p-4 border-b">
+                    <img src="${item.image}" class="w-20 h-20 rounded">
+                    <p class="text-lg font-bold grid col-span-2">${item.name}</p>
+                    <p class="text-lg font-bold">$${item.price.toFixed(2)}</p>
+                    <button onclick="removeItem(${index})" class="text-red-500"><i class="fa-solid fa-trash"></i></button>
+                </div>`;
+                cartContainer.innerHTML += cartItem;
+            });
+            updateTotal();
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function updateTotal() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById("total-price").innerText = `$${total.toFixed(2)}`;
+        }
+
+        function buy() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let user = localStorage.getItem("user");
+            if (!user) {
+                window.location.href = "Login.html";
+                return;
+            } else {
+                window.location.href = "Payment.html";
+            }
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }   
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>
