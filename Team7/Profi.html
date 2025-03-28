@@ -60,6 +60,11 @@
      </div>
     
     <script>
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
         var user = localStorage.getItem("user");
         if (user) {
             var parsedUser = JSON.parse(user);

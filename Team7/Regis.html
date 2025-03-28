@@ -85,6 +85,11 @@
     </footer>
 
     <script>
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
         document.getElementById("registerForm").addEventListener("submit", function (event) {
             event.preventDefault();
             var name = document.getElementById("name").value;

@@ -82,7 +82,7 @@
             <p class="Price">$82</p>
 
             <div class="mt-6">
-                <button onclick="addToCart()"
+                <button onclick="addToCart()" id="b"
                     class="bg-[#B08EAD] text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:bg-[#9A7E99] transition">
                     <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
                 </button>
@@ -95,6 +95,11 @@
             <p>2025 Perfume. All rights reserved</p>
         </footer>
     <script>
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
         function addToCart() {
 
             let productName = document.querySelector("h2").innerText;
@@ -116,7 +121,7 @@
             alert(productName + " Add to cast.");
         }
 
-        document.querySelector("button").addEventListener("click", addToCart);
+        document.querySelector(".b").addEventListener("click", addToCart);
     </script>
 </body>
 

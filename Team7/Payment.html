@@ -101,6 +101,11 @@
 
 
     <script>
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
         function processPayment() {
             const cardName = document.getElementById("cardName").value;
             const cardNumber = document.getElementById("cardNumber").value;
